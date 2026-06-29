@@ -1,4 +1,8 @@
-import requests, hmac, hashlib, json
+import hashlib
+import hmac
+import json
+
+import requests
 
 SECRET = b"my-shared-secret"
 event = {"type": "payment.succeeded", "data": {"amount": 250, "currency": "ILS"}}

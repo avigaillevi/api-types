@@ -11,5 +11,10 @@ query_full = {"query": "{ book(id: 1) { id title author } }"}
 print("Full book ->", requests.post(URL, json=query_full).json())
 
 # mutation שמוסיף ספר
-mutation = {"query": 'mutation { addBook(title: "Domain-Driven Design", author: "Eric Evans") { id title } }'}
+mutation = {
+    "query": (
+    'mutation { addBook(title: "Domain-Driven Design", '
+    'author: "Eric Evans") { id title } }'
+    )
+}
 print("Mutation ->", requests.post(URL, json=mutation).json())

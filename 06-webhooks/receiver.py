@@ -1,8 +1,11 @@
+import hashlib
+import hmac
+
 from fastapi import FastAPI, Request
-import hmac, hashlib
 
 app = FastAPI(title="Webhook Receiver")
 SECRET = b"my-shared-secret"
+
 
 @app.post("/webhook")
 async def receive_webhook(request: Request):

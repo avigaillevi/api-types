@@ -14,7 +14,9 @@ new_id = created.json()["id"]
 print(f"GET /books/{new_id} ->", requests.get(f"{BASE}/books/{new_id}").json())
 
 # PUT עדכון
-updated = requests.put(f"{BASE}/books/{new_id}", json={"title": "Refactoring 2nd Ed", "author": "Martin Fowler"})
+updated = requests.put(
+    f"{BASE}/books/{new_id}", json={"title": "Refactoring 2nd Ed", "author": "Martin Fowler"}
+)
 print(f"PUT /books/{new_id} ->", updated.json())
 
 # DELETE

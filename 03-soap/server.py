@@ -1,7 +1,9 @@
-from spyne import Application, rpc, ServiceBase, Integer, Unicode
+from wsgiref.simple_server import make_server
+
+from spyne import Application, Integer, ServiceBase, Unicode, rpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
-from wsgiref.simple_server import make_server
+
 
 class CalculatorService(ServiceBase):
     @rpc(Integer, Integer, _returns=Integer)
@@ -11,6 +13,7 @@ class CalculatorService(ServiceBase):
     @rpc(Unicode, _returns=Unicode)
     def greet(ctx, name):
         return f"Hello, {name}"
+
 
 application = Application(
     [CalculatorService],

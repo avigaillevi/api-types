@@ -1,11 +1,14 @@
 from concurrent import futures
-import grpc
+
 import calc_pb2
 import calc_pb2_grpc
+import grpc
+
 
 class CalculatorServicer(calc_pb2_grpc.CalculatorServicer):
     def Add(self, request, context):
         return calc_pb2.AddReply(result=request.a + request.b)
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -14,6 +17,7 @@ def serve():
     server.start()
     print("gRPC server on port 50051")
     server.wait_for_termination()
+
 
 if __name__ == "__main__":
     serve()

@@ -31,6 +31,10 @@ dev = [
 [tool.ruff]
 line-length = 100
 target-version = "py313"
+exclude = [
+    "calc_pb2.py",
+    "calc_pb2_grpc.py"
+]
 
 [tool.ruff.lint]
 # E,F בסיסי. I למיון imports. UP לשדרוג תחביר מודרני. B לבאגים נפוצים.
