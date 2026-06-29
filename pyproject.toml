@@ -1,0 +1,40 @@
+[project]
+name = "api-types-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.138.0",
+    "grpcio>=1.81.1",
+    "grpcio-tools>=1.81.1",
+    "lxml>=6.1.1",
+    "mcp[cli]>=1.28.1",
+    "requests>=2.34.2",
+    "six>=1.17.0",
+    "spyne==2.14.0",
+    "sse-starlette>=3.4.5",
+    "strawberry-graphql>=0.319.0",
+    "typer>=0.26.8",
+    "uvicorn[standard]>=0.49.0",
+    "websockets>=16.0",
+    "zeep>=4.3.3",
+]
+
+[dependency-groups]
+dev = [
+    "openapi-python-client>=0.29.0",
+    "ruff>=0.15.19",
+    "ty>=0.0.53",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+# E,F בסיסי. I למיון imports. UP לשדרוג תחביר מודרני. B לבאגים נפוצים.
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ty.environment]
+python-version = "3.13"
