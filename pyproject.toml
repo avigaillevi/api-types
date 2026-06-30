@@ -42,3 +42,8 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.ty.environment]
 python-version = "3.13"
+
+[tool.ty.src]
+exclude = [
+    "04-grpc"
+]
